@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'MYBLOG'; /* Choose a name for your font */
+  src: url('../public/fonts/RubikDoodleShadow-Regular.ttf') format('truetype');
+}
+
+.loginDiv{
+  background-image: url(../public/images/high-angle-desktop-with-laptop-copy-space.jpg);
+  background-size: cover;
+}
+.loginInnerDiv {
+  border-radius: 15px;
+  box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176);
+  background-color: rgba(255, 255, 255, 0.138);
+  width: 50%;
+}
+
+@media(max-width: 768px) {
+  .loginInnerDiv {
+    width: 80%;
+  }
+}
+
+@media(max-width: 576px) {
+  .loginInnerDiv {
+    width: 90%;
+  }
+}
+
+
+#loginHeading{
+  font-family: "MYBLOG";
+  font-size: xx-large;
+}
+.signin {
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 0.75rem;
+  color: #c4d2dc;
+  background-color: #19242b;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0, 0.87, 0.12, 1);
+}
+
+.signin:hover {
+  transform: scale(1.025);
+}
+
+.signin:active {
+  transform: scale(0.975);
+}
+
+button svg {
+  height: 24px;
+  width: auto;
+}
+
+.loginLabel{
+  font-size: small;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.669);
+}
+
+.login-button{
+  width: 16rem;
+  height:55px;
+  border:none;
+  border-radius:5px;
+  font-size:17px;
+  font-weight:600;
+  color:#fff;
+  background-color:#1859c9;
+  cursor:pointer;
+  margin-top: 10px;
+}
+
+
+.login-button:hover{
+  background-color:#1859c9db;
+}
+
+.signupLnik{
+  font-size: large;
+  text-decoration: none;
+  color: white;
+}
