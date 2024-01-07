@@ -1,0 +1,26 @@
+<%- include('../partials/header.ejs') %>
+
+<form action="/user/profileImg" method="post" enctype="multipart/form-data" class="profileForm">
+  <div class="d-flex align-items-around setImgMainDiv">
+    <div class="setImgDescription">
+      <h1 class="pb-3">Set your Profile</h1>
+      <p>Transform your online presence by personalizing your profile picture. Upload an image that resonates with your style.</p>
+    </div>
+    <div class="imgViewDiv">
+      <div class="w-100 text-end" id="skipLink"><a href="/user" class="skipLink">Skip >></a></div>
+      <div class="uploadOuter">
+        <div id="preview"></div>
+        <label for="uploadFile" class="uploadButton" id="chooseImgLabel">Choose Image</label>
+        <input type="file" name="User-Img" id="uploadFile" onchange="dragNdrop(event)" ondragover="drag()" ondrop="drop()" />
+      </div>
+      <button type="submit" class="button" id="signupProceed">
+        Proceed
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</form>
+
+<%- include('../partials/footer.ejs') %>

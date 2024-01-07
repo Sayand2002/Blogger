@@ -1,0 +1,156 @@
+.profileForm{
+  background-color: #f4f4f4;
+}
+
+.setImgMainDiv{
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 -14px 28px rgba(0, 0, 0, 0.103),
+            0 10px 10px rgba(0, 0, 0, 0.105);
+}
+.setImgDescription{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, #ff4c28dc, #fac61c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4%;
+    color: #fff;
+}
+.imgViewDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.uploadOuter {
+    text-align: center;
+    padding: 20px;
+    strong {
+      padding: 0 10px
+    }
+  }
+  #preview {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-image: url('/public/images/user-person-profile-block-account-circle-svgrepo-com\ \(1\).png');
+    background-size: cover;
+    margin-bottom: 5%;
+    text-align: center;
+    img {
+      max-width: 100%
+    }
+  }
+
+.uploadOuter {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+#uploadFile {
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.uploadButton {
+    color: #fff;
+    background: coral;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 35px;
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    outline: none;
+    letter-spacing: 1px;
+    text-transform: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+}
+.uploadButton:hover {
+    background-color: #c54108; 
+} 
+.skipLink{
+    padding: 10px;
+    cursor: pointer;
+    color: #d3d0d0ca;
+}
+/* Proceed button */
+.button {
+  display: none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background: coral;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  cursor:pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+

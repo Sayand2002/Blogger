@@ -1,28 +1,32 @@
 const mongoose = require("mongoose");
+
 const User = mongoose.Schema({
-    username:{
+    username: {
         type: String,
         require: true
     },
-    email:{
+    email: {
         type: String,
         require: true
     },
-    password:{
+    password: {
         type: String,
         require: true
     },
-    status:{
+    image: {
+        type: String,
+    },
+    status: {
         type: Boolean,
         require: true,
         default: 0
     },
-    block:{
+    block: {
         type: Boolean,
         require: true,
-        default: 1
+        default: 0
     },
-    createdAt:{
+    createdAt: {
         type: Date,
         default: Date.now,
     }
