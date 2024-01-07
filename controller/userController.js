@@ -67,7 +67,6 @@ const addNewUser = async (req, res, next) => {
 
 const profileImg = async (req, res, next) => {
   try {
-    console.log(req.file.filename);
     const email = req.session.userEmail;
     const addImg = await userModel.updateOne({email: email},{$set:{image: req.file.filename}});
     if(addImg){

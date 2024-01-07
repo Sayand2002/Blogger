@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-<form action="/user/profileImg" method="post" enctype="multipart/form-data" class="profileForm">
+<form enctype="multipart/form-data" class="profileForm" id="profileForm">
   <div class="d-flex align-items-around setImgMainDiv">
     <div class="setImgDescription">
       <h1 class="pb-3">Set your Profile</h1>
@@ -22,5 +22,6 @@
     </div>
   </div>
 </form>
+<script src="/public/script/setProfile.js"></script>
 
 <%- include('../partials/footer.ejs') %>
