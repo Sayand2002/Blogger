@@ -27,7 +27,6 @@ document.getElementById("signupProceed").addEventListener("click", async (event)
     }
 });
 
-// Rest of your code...
 
 async function showSuccessMessage(message) {
     const Toast = Swal.mixin({
@@ -47,3 +46,4 @@ async function showSuccessMessage(message) {
         title: message
     });
 }
+

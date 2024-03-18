@@ -1,6 +1,6 @@
+require("dotenv/config");
 const express = require("express");
 const app = express();
-require("dotenv/config");
 const path = require("path");
 const session = require("express-session")
 const connectDB = require("./mongoConnect");
@@ -14,7 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
     secret: "secretKey",
     resave: false,
-    saveUninitialized: true 
+    saveUninitialized: true ,
+    cookie: {
+        maxAge: null,
+    }
 }));
 
 const userRoute = require("./routes/userRoute");

@@ -114,8 +114,30 @@ function showError(message) {
   }, 5000);
 }
 
+document.getElementById("signInBtn").addEventListener("click", async(e)=>{
+  try {
+    e.preventDefault();
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+    const loginData = {
+      email: email,
+      password: password
+    }
+    const response = await axios.post("/user/login", loginData);
+    if(response.data.message === "Invalid"){
+      showError("Invalid email or password");
+    }else{
+      window.location.href = "/user/home";
+    }
+  } catch (error) {
+    alert(error);
+  }
+})
 
-
+//create account button click
+function redirectSignUP(){
+  window.location.href = "/user";
+}
 
 
 

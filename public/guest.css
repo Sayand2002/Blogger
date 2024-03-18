@@ -1,0 +1,274 @@
+/* Header Navigation Styles */
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.guest-nav {
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+.guest-signinLink {
+    font-weight: bold;
+    font-size: large;
+}
+
+.guest-signinLink:hover {
+    color: #ff4b28;
+}
+
+.nav-Brand {
+    font-family: "Brand";
+    font-size: x-large;
+}
+
+/* Banner Styles */
+.guest-banner {
+    height: 88vh;
+    width: 100%;
+    background: #e1e0db;
+}
+
+@media (max-width: 1200px) {
+    .guest-banner {
+        flex-direction: column-reverse; 
+    }
+
+    .guestSec1Part1,
+    .guestSec1Part2 {
+        width: 100% !important;
+    }
+
+    .guest-nav {
+        height: auto;
+    }
+}
+
+/* Section 1 Styles */
+.guestSec1Part1 {
+    width: 50%;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 3%;
+    padding-top: 15%;
+    color: #130202;
+}
+
+.guestSec1Part2 {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(/public/images/signin-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: change 10s infinite ease-in-out;
+}
+
+@keyframes change {
+    0% {
+        background-image: url(/public/images/pretty-woman-vlogging-about-make-up.jpg);
+    }
+    20% {
+        background-image: url(/public/images/smiley-female-blogger-recording-herself-while-preparing-salad.jpg);
+    }
+    40% {
+        background-image: url(/public/images/aerial-view-woman-using-computer-laptop-wooden-table.jpg);
+    }
+    60% {
+        background-image: url(/public/images/laptop-half-closed-dark-with-colourful-glow-cup-coffee-glasses.jpg);
+    }
+    80% {
+        background-image: url(/public/images/young-videographer-working-video-production-editing-multimedia-montage-movie-footage-create-agency-content-using-software-computer-edit-professional-film-with-color-grading-effects_482257-53727.avif);
+    }
+    100% {
+        background-image: url(/public/images/medium-shot-smiley-man-with-dumbbells.jpg);
+    }
+}
+
+.bloggerWord {
+    background: linear-gradient(to left, #ff4b28, #e8a20a);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.guest-createAcc {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+
+.guest-createAcc:hover {
+    letter-spacing: 1.5px;
+    background: linear-gradient(to left, #ff4b28, #e8a20a);
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+.guest-createAcc:active {
+    letter-spacing: 3px;
+    background: linear-gradient(to left, #ff4b28, #e8a20a);
+    color: hsl(0, 0%, 100%);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); 
+    transform: translateY(3px); 
+    transition: 100ms;
+}
+
+/* Section 2 Styles */
+.guestSection2Div1 {
+    color: #f8f2f1;
+    text-align: center;
+    padding: 15%;
+    /* background-color: #e1e0db; */
+    background-image: url(/public/images/max-saeling-7NEeOGhHHOI-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+}
+
+.section2Heading {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.section2Para {
+    font-size: large;
+    letter-spacing: 1px;
+    text-rendering:optimizeLegibility;
+}
+.bloggerScreenshots{
+    background-image: url(/public/images/logo_page-0001.jpg);
+    background-size: cover;
+    height: 80vh;
+    width: 50%;
+}
+.guestSection3Div1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+.section2Para{
+    letter-spacing: 1.5px;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #100720;
+  }
+  .footer .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3.5rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+  }
+  .footer-row .footer-col h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .footer-col .links {
+    margin-top: 20px;
+    padding-left: 0 !important;
+  }
+  .footer-col .links li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .footer-col .links li a {
+    text-decoration: none;
+    color: #bfbfbf;
+  }
+  .footer-col .links li a:hover {
+    color: #fff;
+  }
+  .footer-col p {
+    margin: 20px 0;
+    color: #bfbfbf;
+    max-width: 300px;
+  }
+  .footer-col form {
+    display: flex;
+    justify-content:flex-start !important;
+    height: 50% !important;
+    background-color: #100720 !important;
+  }
+  .footer-col input {
+    height: 40px;
+    border-radius: 6px;
+    background: none;
+    width: 100%;
+    outline: none;
+    border: 1px solid #7489C6 ;
+    caret-color: #fff;
+    color: #fff;
+    padding-left: 10px;
+  }
+  .footer-col input::placeholder {
+    color: #ccc;
+  }
+   .footer-col form button {
+    background: #9e5719;
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+  .footer-col form button:hover {
+    background: #cecccc;
+  }
+  .footer-col .icons {
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+  }
+  .footer-col .icons i {
+    color: #afb6c7;
+  }
+  .footer-col .icons i:hover  {
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .footer {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      transform: none;
+      width: 100%;
+      border-radius: 0;
+    }
+    .footer .footer-row {
+      padding: 20px;
+      gap: 1rem;
+    }
+    .footer-col form {
+      display: block;
+    }
+    .footer-col form :where(input, button) {
+      width: 100%;
+    }
+    .footer-col form button {
+      margin: 10px 0 0 0;
+    }
+  }
+  .brandImg{
+    height: 100%;
+    width: 65%;
+  }

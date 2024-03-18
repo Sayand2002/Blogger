@@ -16,21 +16,13 @@ const User = mongoose.Schema({
     image: {
         type: String,
     },
-    status: {
-        type: Boolean,
-        require: true,
-        default: 0
+    follows: {
+        type: [ String ]
     },
-    block: {
-        type: Boolean,
-        require: true,
-        default: 0
+    following:{
+        type: [ String ] 
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    }
-})
+}, { timestamps: true });
 
 const userModel = mongoose.model("userModel",User);
 

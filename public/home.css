@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Brand';
+    src: url('/public/fonts/Irish_Grover/IrishGrover-Regular.ttf') format('truetype');
+}
+
+.homeDiv{
+    width: 100%; 
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+.navbar-brand{
+    font-family: "Brand";
+    font-size: xx-large;
+    padding-left: 30px;
+}
+.navbar-nav li {
+    padding-right: 20px; 
+    display: flex;
+    align-items: center;
+}
+.nav-link:hover{
+    font-weight: bold;
+    color: coral;
+}
+.bannerSubDiv1, .bannerSubDiv2{
+    width: 50%;
+    height: 30rem;
+}
+.bannerSubDiv1 {
+  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.bannerSubDiv1 .date{
+  font-weight: 350;
+}
+.bannerSubDiv1 p{
+  font-weight: 200;
+}
+.bannerSubDiv2{
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+} 
+@media only screen and (max-width: 768px) {
+    .bannerDiv{
+        flex-direction: column-reverse;
+    }
+    .bannerSubDiv1{
+        width: 100%;
+    }
+    .bannerSubDiv2{
+        width: 100%;
+    }
+}
+.likeAndComments{
+  min-height: 5rem;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* like btn */
+
+.svg-heart {
+  stroke: black;
+  stroke-width: 2;
+  transition: all 0.5s;
+}
+
+.svg-heart.active {
+  animation: like 0.5s 1;
+  fill: red; 
+  stroke: none;
+}
+
+@keyframes like {
+  0% { transform: scale(1); }
+  90% { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+/* ---- */
+
+.likeDiv svg{
+  fill: rgba(0, 0, 0, 0.501);
+  margin-left: 10px;
+}
+
+.likeDiv:hover svg{
+  fill: rgba(0, 0, 0, 0.902);
+}
+
+.addBlogBtn{
+  position: fixed;
+  top: 80%;
+  right: 5%;
+  background-color: coral;
+  min-height: 4rem;
+  min-width: 4rem;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 5px;
+  font-size: xx-large;
+  color: #f4f4f4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+.view-author{
+  padding: 10px 15px;
+}
+.userOwnBlogLabel{
+  height: fit-content;
+  padding: 0.7rem;
+  color: #f4f4f4;
+  font-weight: 800;
+  border-radius: 20px;
+  background-color: rgb(207, 165, 50);
+  font-size: 13px;
+}
