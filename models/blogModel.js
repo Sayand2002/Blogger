@@ -22,8 +22,12 @@ const Blog = mongoose.Schema({
     comments: {
         type: [ 
             {
-                text: {
+                comment: {
                     type: String,
+                },
+                user: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'UserModel' 
                 },
                 commentedAt: {
                     type: Date,
@@ -40,3 +44,4 @@ const Blog = mongoose.Schema({
 const blogModel = mongoose.model("blogModel",Blog);
 
 module.exports = blogModel;
+

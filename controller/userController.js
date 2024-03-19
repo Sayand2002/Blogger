@@ -3,6 +3,7 @@ const blogModel = require("../models/blogModel");
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const path = require("path");
+const mongoose = require("mongoose");
 
 // Password encryption using bcrypt
 async function hashPassword(password) {
@@ -266,7 +267,6 @@ const unFollowUser = async (req, res, next) => {
 const likePost = async(req, res, next) =>{
     try {
         const { blogId, userId, isLiked } = req.body;
-        console.log(isLiked);
         let addLike = null;
         if(isLiked == "true"){
             addLike = await blogModel.updateOne({_id: blogId}, {$pull: {likes: userId}});
@@ -283,6 +283,89 @@ const likePost = async(req, res, next) =>{
         next(error);
     }
 }
+
+const showComments = async(req, res, next) => {
+    try {
+        const user = await userModel.findOne({email: req.session.email});
+
+        const blogId = req.params.blogId;
+        const blog = await blogModel.findById(blogId)
+        .populate({
+            path: 'comments.user',
+            model: 'userModel' 
+        })
+        .exec();
+        if(blog){
+            res.render("commentModal", {userId: user._id, blogId: blogId, commentData: blog.comments});
+        }
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
+const addComment = async(req, res, next) => {
+    try {
+        const { userId, blogId, comment } = req.body;
+        
+        const obj = {
+            comment: comment,
+            user: userId,
+            commentedAt: new Date()
+        }
+
+        const updatedBlog = await blogModel.findByIdAndUpdate(
+            blogId,
+            { $push: { comments: obj } },
+            { new: true } 
+        ).populate({
+            path: 'comments.user',
+            model: 'userModel' 
+        })
+        .exec();
+
+        if (updatedBlog) {
+            res.render("commentModal", {userId: userId, blogId: blogId, commentData: updatedBlog.comments});
+        }else{
+            res.status(500).json({ message: "failed" })
+        }
+
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
+const deleteComment = async (req, res, next) => {
+    try {
+        const { commentId, blogId } = req.body;
+
+        const user = await userModel.findOne({ email: req.session.email });
+
+        const updatedBlog = await blogModel.findOneAndUpdate(
+            { _id: blogId },
+            { $pull: { comments: { _id: commentId } } },
+            { new: true }
+        ).populate({
+            path: 'comments.user',
+            model: 'userModel' 
+        })
+        .exec();
+
+        
+        if(updatedBlog){
+            res.render("commentModal", {userId: user._id, blogId: blogId, commentData: updatedBlog.comments});
+        }else{
+            res.json({message: "failed"});
+        }
+        
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+};
+
+
 const logout = (req, res, next) => {
     try {
         req.session.destroy();
@@ -310,5 +393,8 @@ module.exports = {
   followUser,
   unFollowUser,
   likePost,
+  showComments,
+  addComment,
+  deleteComment,
   logout
 };

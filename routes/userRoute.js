@@ -31,6 +31,13 @@ userRoute.patch("/user/followUser",authMiddleware, userController.followUser);
 userRoute.patch("/user/unFollowUser",authMiddleware, userController.unFollowUser);
 userRoute.patch("/user/likePost",authMiddleware, userController.likePost);
 
+userRoute.patch('/user/addComment', authMiddleware, userController.addComment);
+
+userRoute.get('/user/showComments/:blogId', authMiddleware, userController.showComments);
+
+userRoute.patch("/user/deleteComment",authMiddleware, userController.deleteComment);
+
+ 
 
 
 

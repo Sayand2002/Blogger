@@ -1,0 +1,34 @@
+
+
+.profile-image-container{
+    height: 300px; 
+    width: 300px; 
+    border-radius: 50%; 
+    overflow: hidden;
+}
+.profile-image-container input{
+    opacity: 0;
+}
+
+.image-edit-container{
+    width: 30vw;
+    background-color: #f4f4f4;
+}
+
+.edit-form{
+    background-color: #f4f4f4;
+    width: 30vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width: 850px){
+    .editProfile{
+        flex-direction: column;
+    }
+    .image-edit-container{
+        width: 100vw;
+    }
+    .edit-form{
+        width: 100vw;
+    }
+}

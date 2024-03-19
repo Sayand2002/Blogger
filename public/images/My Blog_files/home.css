@@ -59,7 +59,7 @@
 .likeAndComments{
   min-height: 5rem;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   padding-left: 5px;
   align-items: center;
 }
@@ -145,7 +145,6 @@
   border-radius: 10px;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  overflow: scroll;
 }
 
 .modalContents h2{
@@ -157,23 +156,10 @@
   right: 20px;
   top: 15px;
 }
-.comment-input-container button{
-  height: 3rem;
-  background-color: #EEEEEE;
-  border-bottom-left-radius: 0%;
-  border-top-left-radius: 0%;
-}
-.comment-input-container button:hover{
-  border: 1px solid black;
-}
-
 
 .commentInput{
   width: 95%;
-  margin-left: 0%;
-  margin-right: 0%;
-  border-top-right-radius: 0%;
-  border-bottom-right-radius: 0%;
+  margin-top: 2%;
 }
 
 .userImg{
