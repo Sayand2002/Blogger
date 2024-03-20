@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel");
 const blogModel = require("../models/blogModel");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require("path");
 const mongoose = require("mongoose");
