@@ -92,14 +92,13 @@ async function validateSignUp(event) {
 
     try {
         const response = await axios.post("/user/signup", { txt: username, email: email, Pswd: password });
-        console.log(response.data);
         if(response.data.message === "exist"){
             showError("Email already exist!");
         }else if(response.data.message === "success"){
             window.location.href = "/user/setProfile";
         }
     } catch (error) {
-        alert(error)
+        alert("signup Error", error)
     }
 }
 
