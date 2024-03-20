@@ -1,7 +1,7 @@
 document.querySelectorAll(".blogEditBtn").forEach((btn) => {
     btn.addEventListener("click", async () => {
         const blogId =  btn.getAttribute("data-edit-blog-id");
-        window.location.href = `/user/editBlog/${blogId}`;
+        window.location.href = `https://blogger-1.onrender.com/user/editBlog/${blogId}`;
     })
 });
 
@@ -59,7 +59,7 @@ document.getElementById("editBlogBtn").addEventListener("click", async (e) => {
         formData.append("blogId", blogId);
         formData.append('blogImage', imgFile);
 
-        const response = await axios.patch("/user/editBlog", formData);
+        const response = await axios.patch("https://blogger-1.onrender.com/user/editBlog", formData);
         if(response.data.message == "success"){
             Swal.fire({
                 icon: 'success',
@@ -67,7 +67,7 @@ document.getElementById("editBlogBtn").addEventListener("click", async (e) => {
                 text: "Blog edited successfully",
                 confirmButtonText: 'OK'
             }).then(() => {
-                window.location.href = '/user/profile'; 
+                window.location.href = 'https://blogger-1.onrender.com/user/profile'; 
             });
         } else {
             Swal.fire({

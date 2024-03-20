@@ -66,7 +66,7 @@ document.getElementById("addBlogBtn").addEventListener("click", async (e) => {
         formData.append('blogDescription', description);
         formData.append('blogImage', imgFile);
 
-        const response = await axios.post("/user/addBlog", formData);
+        const response = await axios.post("https://blogger-1.onrender.com/user/addBlog", formData);
         console.log(response.data);
         if(response.data.message == "success"){
             Swal.fire({

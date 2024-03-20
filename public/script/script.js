@@ -91,7 +91,7 @@ async function validateSignUp(event) {
     }
 
     try {
-        const response = await axios.post("/user/signup", { txt: username, email: email, Pswd: password });
+        const response = await axios.post("https://blogger-1.onrender.com/user/signup", { txt: username, email: email, Pswd: password });
         if(response.data.message === "exist"){
             showError("Email already exist!");
         }else if(response.data.message === "success"){
@@ -126,7 +126,7 @@ document.getElementById("signInBtn").addEventListener("click", async(e)=>{
     if(response.data.message === "Invalid"){
       showError("Invalid email or password");
     }else{
-      window.location.href = "/user/home";
+      window.location.href = "https://blogger-1.onrender.com/user/home";
     }
   } catch (error) {
     alert(error);

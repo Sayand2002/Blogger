@@ -29,13 +29,13 @@ async function likePost(icon) {
 // Function to view author's profile
 function viewAuthorProfile(author) {
     const userId = author.getAttribute("data-user-id");
-    window.location.href = `/user/viewOtherUserProfile/${userId}`;
+    window.location.href = `https://blogger-1.onrender.com/user/viewOtherUserProfile/${userId}`;
 }
 
 // Function to handle showing comments and adding/deleting comments
 async function handleHomeComments(commentBtn) {
     const blogId = commentBtn.getAttribute('data-blog-id');
-    const response = await axios.get(`/user/showComments/${blogId}`);
+    const response = await axios.get(`https://blogger-1.onrender.com/user/showComments/${blogId}`);
     if (response) {
         document.getElementById("homeModal").innerHTML = response.data;
         document.getElementById("homeModal").style.display = "flex";
@@ -59,7 +59,7 @@ function attachHomeAddCommentListener() {
         const blogId = document.getElementById("commentHiddenBlogId").value;
         const comment = document.getElementById("commentInput").value;
         if (comment.trim() !== "") {
-            const response = await axios.patch("/user/addComment", { userId, blogId, comment });
+            const response = await axios.patch("https://blogger-1.onrender.com/user/addComment", { userId, blogId, comment });
             if (response) {
                 document.getElementById("homeModal").innerHTML = response.data;
                 document.getElementById("homeModal").style.display = "flex";

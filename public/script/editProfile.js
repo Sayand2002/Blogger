@@ -49,7 +49,7 @@ document.getElementById("editProfileSubmitBtn").addEventListener("click", async 
         formData.append("password", password);
         formData.append("newProfileImg", newProfileImg);
 
-        const response = await axios.patch("/user/editProfile", formData);
+        const response = await axios.patch("https://blogger-1.onrender.com/user/editProfile", formData);
         if(response.data.message == "success"){
             const Toast = Swal.mixin({
                 toast: true,

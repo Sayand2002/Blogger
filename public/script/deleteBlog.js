@@ -13,7 +13,7 @@ document.querySelectorAll(".deleteBlogBtn").forEach((button) => {
             confirmButtonText: 'Yes, delete it!'
           }).then(async (result) => {
             if (result.isConfirmed) {
-                const response = await axios.delete(`/user/deleteBlog/${blogId}`);
+                const response = await axios.delete(`https://blogger-1.onrender.com/user/deleteBlog/${blogId}`);
                 if(response.data.message == "success"){
                       Swal.fire(
                         'Deleted!',

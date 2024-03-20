@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
     if(document.getElementById("follow-link")){
         document.getElementById("follow-link").addEventListener("click", async ()=>{
             const userIdHidden = document.getElementById("userIdHidden").value;
-            const response = await axios.patch("/user/followUser", { userId: userIdHidden });
+            const response = await axios.patch("https://blogger-1.onrender.com/user/followUser", { userId: userIdHidden });
             if(response.data.message == "success"){
                 this.window.location.reload();
             }else{
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function() {
     }else{
         document.getElementById("following-link").addEventListener("click", async ()=>{
             const userIdHidden = document.getElementById("userIdHidden").value;
-            const response = await axios.patch("/user/unFollowUser", { userId: userIdHidden });
+            const response = await axios.patch("https://blogger-1.onrender.com/user/unFollowUser", { userId: userIdHidden });
             if(response.data.message == "success"){
                 this.window.location.reload();
             }else{
@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', function() {
 // Function to handle showing comments and adding/deleting comments
 async function handleComments(commentBtn) {
     const blogId = commentBtn.getAttribute('data-blog-id');
-    const response = await axios.get(`/user/showComments/${blogId}`);
+    const response = await axios.get(`https://blogger-1.onrender.com/user/showComments/${blogId}`);
     if (response) {
         document.getElementById("profileModal").innerHTML = response.data;
         document.getElementById("profileModal").style.display = "flex";
@@ -105,7 +105,7 @@ function attachDeleteCommentListener() {
         deleteBtn.addEventListener("click", async(e) => {
             const commentId = e.target.getAttribute("data-comment-id");
             const blogId = document.getElementById("commentHiddenBlogId").value;
-            const response = await axios.patch("/user/deleteComment", { commentId, blogId });
+            const response = await axios.patch("https://blogger-1.onrender.com/user/deleteComment", { commentId, blogId });
             if (response) {
                 showSuccessMessage("Comment deleted..");
                 document.getElementById("profileModal").innerHTML = response.data;
@@ -175,7 +175,7 @@ async function likePost(icon) {
     const userId = icon.getAttribute("data-like-user-id");
     const isLiked = icon.getAttribute("data-isliked");
 
-    const response = await axios.patch("/user/likePost", { blogId, userId, isLiked });
+    const response = await axios.patch("https://blogger-1.onrender.com/user/likePost", { blogId, userId, isLiked });
     if (response.data.message === "success") {
         icon.classList.toggle('active');
         window.location.reload();

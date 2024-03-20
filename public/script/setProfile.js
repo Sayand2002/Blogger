@@ -13,10 +13,10 @@ document.getElementById("signupProceed").addEventListener("click", async (event)
     };
 
     try {
-        const response = await axios.post("/user/profileImg", formData, config);
+        const response = await axios.post("https://blogger-1.onrender.com/user/profileImg", formData, config);
         if (response.data && response.data.message === "success") {
             await showSuccessMessage('Image uploaded successfully!');
-            window.location.href = "/user";
+            window.location.href = "https://blogger-1.onrender.com/user";
         } else {
             const errorMessage = response.data && response.data.error ? response.data.error : "An error occurred";
             alert(errorMessage);
