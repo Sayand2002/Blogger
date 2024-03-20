@@ -224,3 +224,12 @@ width: 12px;
   justify-content: center;
   display: none;
 }
+
+@media (max-width: 975px) {
+    .profile-user-blogs{
+        flex-direction: column-reverse;
+    }
+    .profile-user-blogs div{
+        width: 100%;
+    }
+}

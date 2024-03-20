@@ -45,6 +45,7 @@ window.addEventListener('DOMContentLoaded', function() {
             copyToClipboard();
         });
     });
+
 });
 
 
@@ -208,10 +209,6 @@ document.getElementById("profile-image-input").addEventListener("change", (event
         document.getElementById("editProfileImg").src = "";
     }
 });
-
-
-
-
 
 
 

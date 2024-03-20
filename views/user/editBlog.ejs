@@ -1,0 +1,99 @@
+<%- include('../partials/header.ejs') %>
+<nav class="navbar profileNav navbar-light bg-light">
+    <a class="navbar-brand" href="/user/home">Blogger</a>
+</nav>
+<section class="d-flex justify-content-center align-item-center editProfile">
+    <div class="addBlog-form-container d-flex justify-content-center">
+        <form class="addBlog-form py-5 flex-1" enctype="multipart/form-data" style="height: 950px;">
+            <h1>Edit Blog</h1>
+            <br><br>
+            <div class="form-group text-start">
+                <label
+                    for="blogTitle"
+                    style="padding-left: 20px;"
+                    >
+                    Blog Title
+                </label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="blogTitle" 
+                    name="blogTitle" 
+                    value="<%=blogData.title%>"
+                    required
+                >
+                <span id="titleError"></span>
+            </div>
+            <br>
+            <div class="form-group text-start">
+                <label
+                    for="blogType"
+                    style="padding-left: 20px;"
+                    >
+                    Blog Type <span style="color: rgba(128, 128, 128, 0.712); font-size: small;">(eg: fashion, tech...)</span>
+                </label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="blogType" 
+                    name="blogType" 
+                    value="<%=blogData.blogType%>"
+                    required
+                >
+                <span id="typeError"></span>
+            </div>
+            <br>
+            <div class="form-group text-start">
+                <label
+                for="blogDescription"
+                
+                >
+                Blog Description
+            </label>
+            <textarea 
+                class="form-control" 
+                id="blogDescription" 
+                name="blogDescription" 
+                rows="3" 
+                required
+            ><%=blogData.description%></textarea>
+            <span id="descriptionError"></span>
+        </div>
+        <br>
+        <div class="form-group text-start d-flex justify-content-center flex-column">
+            <label
+            for="blogImage"
+            style="padding-left: 20px;"
+                >
+                    Blog Image
+                </label>
+                <input 
+                    type="file" 
+                    class="form-control" 
+                    id="blogImage" 
+                    name="blogImage" 
+                    required
+                    value="/public/uploads/<%=blogData.postImg%>"
+                >
+                <img 
+                    id="imagePreview" 
+                    src="/public/uploads/<%=blogData.postImg%>" 
+                    alt="Image Preview"
+                    style="display: block;"
+                >
+                <span id="imgError"></span>
+            </div>
+            <br>
+            <button type="submit" id="editBlogBtn" data-blog-id="<%=blogData._id%>">Edit Blog</button>
+        </form>
+        <div class="videoContainer flex-1">
+            <video id="myVideo" width="100%" autoplay="true" muted>
+                <source src="/public/videos/pexels-maksim-goncharenok-5642531 (1080p).mp4" type="video/mp4" > 
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer.ejs') %>
+

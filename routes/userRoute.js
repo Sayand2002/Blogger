@@ -32,10 +32,12 @@ userRoute.patch("/user/unFollowUser",authMiddleware, userController.unFollowUser
 userRoute.patch("/user/likePost",authMiddleware, userController.likePost);
 
 userRoute.patch('/user/addComment', authMiddleware, userController.addComment);
-
 userRoute.get('/user/showComments/:blogId', authMiddleware, userController.showComments);
-
 userRoute.patch("/user/deleteComment",authMiddleware, userController.deleteComment);
+userRoute.patch("/user/editProfile",authMiddleware, upload.single("newProfileImg"), userController.editUserProfileData);
+userRoute.get("/user/editBlog/:blogId", authMiddleware, userController.editBlog);
+userRoute.patch("/user/editBlog", upload.single("blogImage"), userController.editBlogData);
+
 
  
 

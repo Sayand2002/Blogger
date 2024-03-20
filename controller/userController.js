@@ -34,11 +34,14 @@ const verifyLogin = async (req, res, next) => {
         const userData = await userModel.findOne({email: email});
         if(userData){
             const passwordMatch = await bcrypt.compare(password, userData.password);
+
             if(passwordMatch){
+
                 req.session.email = email;
                 const blogs = await blogModel.find();
                 const user = await userModel.findOne({ email: req.session.email });
                 res.render("home", { blogs: blogs, userId: user._id  });
+
             }else{
                 res.json({message: "Invalid"});
             }
@@ -135,6 +138,47 @@ const editProfile = async(req, res, next) => {
     }
 }
 
+const editUserProfileData = async (req, res, next) => {
+    try {
+        const { username, password } = req.body;
+        const image = req.file;
+        const encryptPassword = await hashPassword(password);
+
+        const user = await userModel.findOne({ email: req.session.email });
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        if (user.image) {
+            const imagePath = path.resolve(__dirname, "..", 'public', 'uploads', user.image);
+            fs.unlink(imagePath, (err) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("Blog image unlinked...");
+                }
+            });
+        }
+
+        if (username) {
+            user.username = username;
+        }
+        if (password) {
+            user.password = encryptPassword;
+        }
+        if (image) {
+            user.image = image.filename;
+        }
+
+        const updatedData = await user.save();
+        return res.status(200).json({ message: "success" });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+}
+
+
 const loadAddBlog = async(req, res, next) => {
     try {
         res.render("addBlogForm");
@@ -198,6 +242,48 @@ const deleteBlog = async(req, res, next) => {
         next(error);
     }
 }
+
+const editBlog = async (req, res, next) => {
+    try {
+        const blog = await blogModel.findOne({_id: req.params.blogId});
+        res.render("editBlog", {blogData: blog})
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
+const editBlogData = async (req, res, next) => {
+    try {
+        const { blogTitle, blogType, blogDescription, blogId } = req.body;
+        const image = req.file;
+
+        const blog = await blogModel.findById(blogId); 
+        if (!blog) {
+            return res.status(404).json({ message: "Blog not found" });
+        }
+
+        let updatedImage = blog.postImg; 
+
+        if (image) {
+            const imagePath = path.resolve(__dirname, "../public/uploads", blog.postImg);
+            fs.unlinkSync(imagePath); 
+            updatedImage = image.filename; 
+        }
+
+        blog.title = blogTitle;
+        blog.blogType = blogType;
+        blog.description = blogDescription;
+        blog.postImg = updatedImage;
+
+        const updatedBlog = await blog.save();
+
+        res.status(200).json({ message: "success"});
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+};
 
 const viewOtherUserProfile = async(req, res, next) => {
     try {
@@ -386,9 +472,12 @@ module.exports = {
   loadHome,
   loadProfile,
   editProfile,
+  editUserProfileData,
   loadAddBlog,
   addBlog,
   deleteBlog,
+  editBlog,
+  editBlogData,
   viewOtherUserProfile,
   followUser,
   unFollowUser,

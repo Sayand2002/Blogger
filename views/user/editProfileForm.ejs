@@ -35,10 +35,11 @@
                     <input 
                     type="text" 
                     class="form-control" 
-                    id="exampleInputEmail1" 
+                    id="editEmail1" 
                     value="<%=user.username%>"
                     style="width: 20rem;"
                     >
+                    <span id="editProfileUsernameErr"  style="padding-left: 20px; color: red; font-size: small;"></span>
                 </div>
                 <br>
                 <div class="form-group text-start">
@@ -51,9 +52,11 @@
                     <input 
                     type="password" 
                     class="form-control" 
-                    id="exampleInputPassword1" 
+                    id="editPassword" 
                     style="width: 20rem;"
                     placeholder="New Password">
+
+                    <span id="editProfilePasswordErr"  style="padding-left: 20px; color: red; font-size: small;"></span>
                 </div>
                 <br>
                 <div class="form-group text-start">
@@ -66,15 +69,17 @@
                     <input 
                     type="password" 
                     class="form-control" 
-                    id="exampleInputPassword1" 
+                    id="editReEnterPassword1" 
                     style="width: 20rem;"
-                    placeholder="Re-enter Password">
+                    placeholder="Re-enter Password"
+                    >
+                    <span id="editProfileReEnterPasswordErr" style="padding-left: 20px; color: red; font-size: small;"></span>
                 </div>
             <br>
-            <button type="submit">Edit</button>
+            <button type="submit" id="editProfileSubmitBtn">Edit</button>
         </form>
     </div>
-    <div class="d-flex justify-content-center align-items-center image-edit-container">
+    <div class="d-flex flex-column justify-content-center align-items-center image-edit-container">
         <div class="d-flex position-relative profile-image-container" id="profile-image-container">
             <input 
                 type="file" 
@@ -85,8 +90,10 @@
                 src="../../public/uploads/<%=user.image%>" 
                 id="editProfileImg" 
                 class="position-absolute top-0" 
-                style="height: 100%; width: auto;" />
+                style="height: 100%; width: auto;" 
+            />
         </div>
+        <span id="editProfileImgErr" style="padding-left: 20px; color: red; font-size: small;"></span>
     </div>
 </section>
 
