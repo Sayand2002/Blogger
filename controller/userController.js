@@ -69,7 +69,7 @@ const addNewUser = async (req, res, next) => {
         const { txt, email, Pswd } = req.body;
         const hashedPassword = await hashPassword(Pswd);
         //check for user existance
-        const userData = await userModel.findOne({email: email});
+        const userData = await userModel.findOne({email: email}).timeout(10000);;
         if(userData){
             res.status(200).json({message: "exist"})
         }else{
