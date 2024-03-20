@@ -37,6 +37,7 @@ userRoute.patch("/user/deleteComment",authMiddleware, userController.deleteComme
 userRoute.patch("/user/editProfile",authMiddleware, upload.single("newProfileImg"), userController.editUserProfileData);
 userRoute.get("/user/editBlog/:blogId", authMiddleware, userController.editBlog);
 userRoute.patch("/user/editBlog", upload.single("blogImage"), userController.editBlogData);
+userRoute.get("/user/filterBlog/:type", userController.filterBlog);
 
 
  

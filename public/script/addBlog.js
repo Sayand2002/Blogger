@@ -39,7 +39,6 @@ document.getElementById("addBlogBtn").addEventListener("click", async (e) => {
             showError("titleError", "Title cannot start with a number");
             return;
         }
-
         if (!type.trim()) {
             showError("typeError", "Please enter a type");
             return;

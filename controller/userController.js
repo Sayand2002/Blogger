@@ -451,6 +451,17 @@ const deleteComment = async (req, res, next) => {
     }
 };
 
+const filterBlog = async(req, res, next) => {
+    try {
+        const type = req.params.type;
+        const typeBlog = await blogModel.find({blogType: type});
+        const user = await userModel.findOne({ email: req.session.email });
+        res.render("home", { blogs: typeBlog, userId: user._id  });
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
 
 const logout = (req, res, next) => {
     try {
@@ -485,5 +496,6 @@ module.exports = {
   showComments,
   addComment,
   deleteComment,
+  filterBlog,
   logout
 };

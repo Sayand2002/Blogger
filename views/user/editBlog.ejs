@@ -32,14 +32,20 @@
                     >
                     Blog Type <span style="color: rgba(128, 128, 128, 0.712); font-size: small;">(eg: fashion, tech...)</span>
                 </label>
-                <input 
+                <select 
                     type="text" 
                     class="form-control" 
                     id="blogType" 
                     name="blogType" 
-                    value="<%=blogData.blogType%>"
                     required
                 >
+                    <option><%=blogData.blogType%></option>
+                    <option value="Tech">Tech</option>
+                    <option value="Tech">Travel</option>
+                    <option value="Tech">Sports</option>
+                    <option value="Tech">Entertainment</option>
+                    <option value="Tech">News</option>
+                </select>
                 <span id="typeError"></span>
             </div>
             <br>
