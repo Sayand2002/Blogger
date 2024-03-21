@@ -6,7 +6,6 @@ html, body {
   height: 100%;
 }
 .container{
-  display: flex;
   position: relative;
   width: 768px;
   max-width: 100%;
@@ -17,6 +16,8 @@ html, body {
               0 10px 10px rgba(0, 0, 0, 0.105);
 }
 #main{
+  display: flex;
+  flex-direction: row;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -208,7 +209,7 @@ button:active{
 
 
 @media (max-width: 650px){
-  .container{
+  #main{
     flex-direction: column;
   }
 }
