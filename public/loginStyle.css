@@ -205,3 +205,10 @@ button:active{
   display: block;
   transform: translateX(0); 
 }
+
+
+@media (max-width: 650px){
+  .container{
+    flex-direction: column;
+  }
+}
