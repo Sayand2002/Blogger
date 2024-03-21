@@ -14,6 +14,13 @@
     flex-wrap: wrap-reverse;
 }
 
+@media (max-width: 550px){
+    .user-profile-section1{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 .userData{
     display: flex;
     flex: 1;
