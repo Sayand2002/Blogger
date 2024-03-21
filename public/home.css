@@ -148,6 +148,12 @@
   overflow: scroll;
 }
 
+@media (max-width: 830px){
+  .modalContents{
+    width: 90%;
+  }
+}
+
 .modalContents h2{
   font-weight: bold;
 }
