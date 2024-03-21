@@ -245,6 +245,15 @@ body::-webkit-scrollbar{
     color: #fff;
   }
   @media (max-width: 768px) {
+    .guestSection3{
+      flex-direction: column-reverse;
+    }
+    .bloggerScreenshots{
+      width: 100%;
+    }
+    .guestSection3Div1{
+      width: 100%;
+    }
     .footer {
       position: relative;
       bottom: 0;
