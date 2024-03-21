@@ -131,6 +131,13 @@
     flex-direction: column;
 }
 
+@media (max-width: 550px){
+    .post-list{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 .title h5{
     width: fit-content;
     padding: 15px;
