@@ -6,7 +6,9 @@ const session = require("express-session")
 const connectDB = require("./mongoConnect");
 connectDB()
 
-app.use('/public', express.static(path.join(__dirname, '/public')));
+
+app.use('/uploads', express.static(path.join(__dirname, '/public/uploads')));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
