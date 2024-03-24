@@ -209,7 +209,7 @@ button:active{
 
 
 @media (max-width: 650px){
-  #main{
-    flex-direction: column;
+  .overlay-container{
+    display: none;
   }
 }
