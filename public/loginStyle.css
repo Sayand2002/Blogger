@@ -17,10 +17,7 @@ html, body {
 }
 #main{
   display: flex;
-  flex-direction: row;
-  position: fixed;
-  top: 50%;
-  left: 50%;
+  flex-direction: row;  
   transform: translate(-50%, -50%);
 }
 .sign-up, .sign-in{
