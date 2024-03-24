@@ -5,8 +5,14 @@
 html, body {
   height: 100%;
 }
+
+.main-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .container{
-  position: relative;
   width: 768px;
   max-width: 100%;
   min-height: 480px;
@@ -18,9 +24,6 @@ html, body {
 #main{
   display: flex;
   flex-direction: row;
-  position: fixed;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 .sign-up, .sign-in{
