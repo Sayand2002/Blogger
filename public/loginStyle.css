@@ -212,4 +212,7 @@ button:active{
   .overlay-container{
     display: none;
   }
+  .sign-in{
+    width: 100%;
+  }
 }
