@@ -94,7 +94,7 @@ const addNewUser = async (req, res, next) => {
 const profileImg = async (req, res, next) => {
     try {
         const email = req.session.email;
-        const addImg = await userModel.updateOne({email: email},{$set:{image: req.cloudinaryUrl}});
+        const addImg = await userModel.updateOne({email: email},{$set:{image: req.file.filename}});
         if(addImg){
         res.status(200).json({message: "success"});
         }else{
@@ -141,7 +141,7 @@ const editProfile = async(req, res, next) => {
 const editUserProfileData = async (req, res, next) => {
     try {
         const { username, password } = req.body;
-        const image = req.cloudinaryUrl;
+        const image = req.file;
         const encryptPassword = await hashPassword(password);
 
         const user = await userModel.findOne({ email: req.session.email });
@@ -191,7 +191,7 @@ const loadAddBlog = async(req, res, next) => {
 const addBlog = async(req, res, next) => {
     try {
         let { blogTitle, blogType, blogDescription } = req.body;
-        let blogImg = req.cloudinaryUrl;
+        let blogImg = req.file;
         let user = await userModel.findOne({email: req.session.email});
         if(user){
             const newBlog = new blogModel({
@@ -256,7 +256,7 @@ const editBlog = async (req, res, next) => {
 const editBlogData = async (req, res, next) => {
     try {
         const { blogTitle, blogType, blogDescription, blogId } = req.body;
-        const image = req.cloudinaryUrl;
+        const image = req.file;
 
         const blog = await blogModel.findById(blogId); 
         if (!blog) {

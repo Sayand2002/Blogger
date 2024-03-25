@@ -1,7 +1,6 @@
 const express = require("express");
 const userRoute = express();
 const path = require("path");
-const cloudinaryUpload = require("../middleware/cloudinary")
 
 userRoute.set("view engine", "ejs");
 userRoute.set("views", path.join(__dirname, "../views/user"));
@@ -24,8 +23,8 @@ userRoute.get("/user", userController.login);
 userRoute.post("/user/login", userController.verifyLogin);
 userRoute.post("/user/signup", userController.addNewUser);
 userRoute.get("/user/setProfile", userController.setProfile);
-userRoute.post("/user/profileImg", cloudinaryUpload, userController.profileImg);
-userRoute.post("/user/addBlog", cloudinaryUpload, userController.addBlog);
+userRoute.post("/user/profileImg", upload.single("User-Img"), userController.profileImg);
+userRoute.post("/user/addBlog", upload.single("blogImage"), userController.addBlog);
 userRoute.delete("/user/deleteBlog/:blogId", userController.deleteBlog);
 userRoute.get("/user/viewOtherUserProfile/:userId",authMiddleware, userController.viewOtherUserProfile);
 userRoute.patch("/user/followUser",authMiddleware, userController.followUser);
@@ -35,9 +34,9 @@ userRoute.patch("/user/likePost",authMiddleware, userController.likePost);
 userRoute.patch('/user/addComment', authMiddleware, userController.addComment);
 userRoute.get('/user/showComments/:blogId', authMiddleware, userController.showComments);
 userRoute.patch("/user/deleteComment",authMiddleware, userController.deleteComment);
-userRoute.patch("/user/editProfile",authMiddleware, cloudinaryUpload, userController.editUserProfileData);
+userRoute.patch("/user/editProfile",authMiddleware, upload.single("newProfileImg"), userController.editUserProfileData);
 userRoute.get("/user/editBlog/:blogId", authMiddleware, userController.editBlog);
-userRoute.patch("/user/editBlog", cloudinaryUpload, userController.editBlogData);
+userRoute.patch("/user/editBlog", upload.single("blogImage"), userController.editBlogData);
 userRoute.get("/user/filterBlog/:type", userController.filterBlog);
 
 
