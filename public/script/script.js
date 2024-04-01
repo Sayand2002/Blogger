@@ -126,10 +126,10 @@ document.getElementById("signInBtn").addEventListener("click", async(e)=>{
     if(response.data.message === "Invalid"){
       showError("Invalid email or password");
     }else{
-      alert()
       window.location.href = "https://blogger-1.onrender.com/user/home";
     }
   } catch (error) {
+    alert()
     alert(error);
   }
 })
