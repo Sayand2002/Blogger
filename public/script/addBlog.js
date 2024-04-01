@@ -75,7 +75,7 @@ document.getElementById("addBlogBtn").addEventListener("click", async (e) => {
                 text: "Blog added successfully",
                 confirmButtonText: 'OK'
             }).then(() => {
-                window.location.href = '/user/home'; 
+                window.location.href = 'https://blogger-1.onrender.com/user/home'; 
             });
         } else {
             Swal.fire({

@@ -95,7 +95,7 @@ async function validateSignUp(event) {
         if(response.data.message === "exist"){
             showError("Email already exist!");
         }else if(response.data.message === "success"){
-            window.location.href = "/user/setProfile";
+            window.location.href = "https://blogger-1.onrender.com/user/setProfile";
         }
     } catch (error) {
         alert("signup Error", error)
@@ -135,7 +135,7 @@ document.getElementById("signInBtn").addEventListener("click", async(e)=>{
 
 //create account button click
 function redirectSignUP(){
-  window.location.href = "/user";
+  window.location.href = "https://blogger-1.onrender.com/user";
 }
 
 

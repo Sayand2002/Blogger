@@ -8,8 +8,8 @@
 
 
         <nav class="navbar profileNav navbar-light bg-light px-1 px-lg-4">
-            <a class="navbar-brand" href="/user/home">Blogger</a>
-            <a href="/user/logout" data-bs-toggle="tooltip" title="Logout"> 
+            <a class="navbar-brand" href="https://blogger-1.onrender.com/user/home">Blogger</a>
+            <a href="https://blogger-1.onrender.com/user/logout" data-bs-toggle="tooltip" title="Logout"> 
                 <%if(String(user._id) == String(curUser)){%>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
@@ -26,7 +26,7 @@
                         <h4 class="p-4 pt-5"><%=user.username%> <span style="font-size: medium;">(<%=user.email%>)</span></h4>
                         <%if(String(user._id) == String(curUser)){%>
                             <%if(!user.following.includes(curUser)){%>
-                                <a class="userEditBtn" href="/user/editProfile">
+                                <a class="userEditBtn" href="https://blogger-1.onrender.com/user/editProfile">
                                     Edit
                                     <svg viewBox="0 0 512 512" class="svg">
                                         <path
@@ -35,7 +35,7 @@
                                     </svg>
                                 </a>
                             <%}else{%>
-                                <a class="userEditBtn" href="/user/editProfile">
+                                <a class="userEditBtn" href="https://blogger-1.onrender.com/user/editProfile">
                                     Edit
                                     <svg viewBox="0 0 512 512" class="svg">
                                         <path

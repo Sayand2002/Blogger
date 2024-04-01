@@ -17,7 +17,7 @@ async function likePost(icon) {
     const userId = icon.getAttribute("data-like-user-id");
     const isLiked = icon.getAttribute("data-isliked");
 
-    const response = await axios.patch("/user/likePost", { blogId, userId, isLiked });
+    const response = await axios.patch("https://blogger-1.onrender.com/user/likePost", { blogId, userId, isLiked });
     if (response.data.message === "success") {
         icon.classList.toggle('active');
         window.location.reload();

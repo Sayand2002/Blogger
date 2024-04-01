@@ -67,7 +67,7 @@ document.getElementById("editProfileSubmitBtn").addEventListener("click", async 
                 icon: 'success',
                 title: "Profile updated successfully"
             }).then(() => {
-                window.location.href = "/user"; 
+                window.location.href = "https://blogger-1.onrender.com/user"; 
             });
         
         }else{
