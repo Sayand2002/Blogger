@@ -122,6 +122,7 @@ document.getElementById("signInBtn").addEventListener("click", async(e)=>{
       email: email,
       password: password
     }
+    alert(loginData)
     const response = await axios.post("https://blogger-1.onrender.com/user/login", loginData);
     if(response.data.message === "Invalid"){
       showError("Invalid email or password");
@@ -129,7 +130,6 @@ document.getElementById("signInBtn").addEventListener("click", async(e)=>{
       window.location.href = "https://blogger-1.onrender.com/user/home";
     }
   } catch (error) {
-    alert()
     alert(error);
   }
 })
