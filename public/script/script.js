@@ -122,8 +122,7 @@ document.getElementById("signInBtn").addEventListener("click", async(e)=>{
       email: email,
       password: password
     }
-    const response = await axios.post("https://blogger-1.onrender.com/user/login", loginData);
-    console.log(response);
+    const response = await axios.post("/user/login", loginData);
     if(response.data.message === "Invalid"){
       showError("Invalid email or password");
     }else{
