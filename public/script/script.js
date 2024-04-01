@@ -126,7 +126,7 @@ document.getElementById("signInBtn").addEventListener("click", async(e)=>{
     if(response.data.message === "Invalid"){
       showError("Invalid email or password");
     }else{
-      window.location.href = "https://blogger-1.onrender.com/user/home";
+      window.location.href = "/user/home";
     }
   } catch (error) {
     alert(error);
