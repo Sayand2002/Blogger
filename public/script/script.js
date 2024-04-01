@@ -4,7 +4,6 @@ const signInButton = document.getElementById("signIn");
 const main = document.getElementById("main");
 
 signUpButton.addEventListener("click",()=>{
-  alert()
   main.classList.add("right-panel-active");
 })
 
