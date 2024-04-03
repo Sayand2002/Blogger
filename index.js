@@ -27,7 +27,7 @@ const userRoute = require("./routes/userRoute");
 
 app.use("/", userRoute);
 
-const port = process.env.PORT || 5050;
+const port = process.env.PORT || 5051;
 
 app.listen(port, () => {
     console.log(`Server running @ http://localhost:${port}`);
