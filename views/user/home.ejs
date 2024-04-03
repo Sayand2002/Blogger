@@ -34,9 +34,9 @@
                     <a class="nav-link" href="https://blogger-1.onrender.com/user/filterBlog/News">News</a>
                 </li>
                 <li class="nav-item">
-                    <% if( user != undefined ){ %>
+                    <% if( userData  ){ %>
                         <a class="nav-link" href="https://blogger-1.onrender.com/user/profile">
-                            <img src="https://blogger-1.onrender.com/uploads/<%=user.image%>" alt="" srcset="" height="35px" width="35px">
+                            <img src="https://blogger-1.onrender.com/uploads/<%=userData.image%>" alt="" srcset="" height="35px" width="35px">
                         </a>
                     <% } else { %>
                         <a class="nav-link" href="https://blogger-1.onrender.com/user/profile">
@@ -93,7 +93,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <%if(String(user) != String(blog.user)){%>
+                            <%if(String(userData) != String(blog.user)){%>
                                 <button class="view-author" id="viewAuthor" data-user-id="<%=blog.user%>">View Author</button>
                             <%}else{%>
                                 <label class="userOwnBlogLabel">YOUR BLOG</label>
