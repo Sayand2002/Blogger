@@ -40,6 +40,7 @@ const verifyLogin = async (req, res, next) => {
                 req.session.email = email;
                 const blogs = await blogModel.find();
                 const user = await userModel.findOne({ email: req.session.email });
+                console.log("response send...");
                 res.render("home", { blogs: blogs, userId: user._id  });
 
             }else{
