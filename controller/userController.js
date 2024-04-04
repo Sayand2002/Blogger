@@ -39,7 +39,7 @@ const verifyLogin = async (req, res, next) => {
 
                 req.session.email = email;
                 const blogs = await blogModel.find();
-                res.render("home", { blogs: blogs, userId: userData._id  });
+                res.render("home", { blogs: blogs, user: userData._id  });
             }else{
                 res.json({message: "Invalid"});
             }
